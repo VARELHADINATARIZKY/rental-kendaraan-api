@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type KendaraanType {
+  hargaSewa: Float!
+  id: Int!
+  jenis: String!
+  merk: String!
+  namaKendaraan: String!
+  platNomor: String!
+  status: String!
+  tahun: Int!
+}
+
+type PelangganType {
+  alamat: String!
+  email: String!
+  id: Int!
+  nama: String!
+  noHp: String!
+}
+
+type PenyewaanType {
+  id: Int!
+  kendaraan: KendaraanType!
+  kendaraanId: Int!
+  pelanggan: PelangganType!
+  pelangganId: Int!
+  status: String!
+  tanggalMulai: DateTime!
+  tanggalSelesai: DateTime!
+  totalBiaya: Float!
+}
+
+type Query {
+  penyewaanById(id: Int!): PenyewaanType
+  pesanGraphQL: String!
+  semuaPenyewaan: [PenyewaanType!]!
+}
